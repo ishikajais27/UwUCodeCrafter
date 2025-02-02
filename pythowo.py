@@ -1,8 +1,4 @@
-# cowode stowlen shamewesswy fwom: https://github.com/davidcallanan/py-myopl-code
 
-#######################################
-# IMPOWORTS
-#######################################
 
 import math
 import os
@@ -11,17 +7,11 @@ import sys
 
 from stwings_with_awwows import *
 
-#######################################
-# CONSTAWANTS
-#######################################
-
 DIGITS = "0123456789"
 LETTERS = string.ascii_letters
 LETTERS_DIGITS = LETTERS + DIGITS
 
-#######################################
-# ERROWORS
-#######################################
+
 
 
 class Error:
@@ -92,9 +82,7 @@ class RTError(Error):
         return "Traceback (most recent call last):\n" + result
 
 
-#######################################
-# POWOSITION
-#######################################
+
 
 
 class Position:
@@ -118,10 +106,6 @@ class Position:
     def copy(self):
         return Position(self.idx, self.ln, self.col, self.fn, self.ftxt)
 
-
-#######################################
-# TOWOKENS
-#######################################
 
 TT_INT = "INT"
 TT_FLOAT = "FLOAT"
@@ -192,9 +176,6 @@ class Token:
         return f"{self.type}"
 
 
-#######################################
-# LEXER
-#######################################
 
 
 class Lexer:
@@ -394,10 +375,6 @@ class Lexer:
         self.advance()
 
 
-#######################################
-# NOWODES
-#######################################
-
 
 class NumberNode:
     def __init__(self, tok):
@@ -561,9 +538,6 @@ class BreakNode:
         self.pos_end = pos_end
 
 
-#######################################
-# PAWARSE RESUWULT
-#######################################
 
 
 class ParseResult:
@@ -601,10 +575,6 @@ class ParseResult:
         return self
 
 
-#######################################
-# PAWARSE
-#######################################
-
 
 class Parser:
     def __init__(self, tokens):
@@ -638,7 +608,7 @@ class Parser:
             )
         return res
 
-    ###################################
+ 
 
     def statements(self):
         res = ParseResult()
@@ -1422,7 +1392,7 @@ class Parser:
 
         return res.success(FuncDefNode(var_name_tok, arg_name_toks, body, False))
 
-    ###################################
+   
 
     def bin_op(self, func_a, ops, func_b=None):
         if func_b == None:
@@ -1448,9 +1418,6 @@ class Parser:
         return res.success(left)
 
 
-#######################################
-# RUWUNTIME RESUWULT
-#######################################
 
 
 class RTResult:
@@ -1506,9 +1473,6 @@ class RTResult:
         )
 
 
-#######################################
-# VALUWUES
-#######################################
 
 
 class Value:
@@ -2201,9 +2165,7 @@ BuiltInFunction.len = BuiltInFunction("len")
 BuiltInFunction.run = BuiltInFunction("run")
 
 
-#######################################
-# CONTEWEXT
-#######################################
+
 
 
 class Context:
@@ -2214,9 +2176,6 @@ class Context:
         self.symbol_table = None
 
 
-#######################################
-# SYMBUWL TABWLE
-#######################################
 
 
 class SymbolTable:
